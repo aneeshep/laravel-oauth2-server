@@ -16,3 +16,13 @@ Route::get('/', function()
 	return View::make('hello');
 });
 Route::resource('user', 'UserController');
+Route::post('oauth/access_token', function()
+{
+    return AuthorizationServer::performAccessTokenFlow();
+});
+
+Route::get('secure-route', array('before' => 'oauth', function(){
+	$ownerId = ResourceServer::getOwnerId();
+	echo Sentry::findUserById($ownerId)->email;
+    return "oauth secured route";
+}));

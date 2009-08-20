@@ -72,17 +72,19 @@ return array(
             'callback'         => function ($username, $password) {
                 
                 $credentials = array(
-                    'email' => $username,
+                    'username' => $username,
                     'password' => $password,
                 );
 
-                $valid = Auth::validate($credentials);
+                //$valid = Auth::validate($credentials);
+                $user = Sentry::authenticate($credentials, false);
 
-                if (!$valid) {
+                if (!$user) {
                     return false;
                 }
 
-                return Auth::getProvider()->retrieveByCredentials($credentials)->id;
+                //return Auth::getProvider()->retrieveByCredentials($credentials)->id;
+                return $user->id;
             }
         ),
 
