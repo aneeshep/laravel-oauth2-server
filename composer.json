@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		 "cartalyst/sentry": "2.1.*"
+		 "cartalyst/sentry": "2.1.*",
+		 "lucadegasperi/oauth2-server-laravel": "1.0.x"
 	},
 	"require-dev": {
     	"way/generators": "2.*"
