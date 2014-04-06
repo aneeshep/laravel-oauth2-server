@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('OauthClientsTableSeeder');
 		$this->command->info('OauthClient Table seeded');
+
+		$this->call('OauthScopesTableSeeder');
+		$this->command->info('OauthScopes Table seeded');
 		
 	}
 
