@@ -26,3 +26,8 @@ Route::get('secure-route', array('before' => 'oauth:webapp', function(){
 	echo Sentry::findUserById($ownerId)->email;
     return "oauth secured route";
 }));
+
+Route::get('test', array('before' => array('oauth:webapp', 'access:user.delete,user.create'), function()
+{
+    return 'You are authenticated and over 200 years old!';
+}));
