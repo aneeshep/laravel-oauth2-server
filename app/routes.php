@@ -21,7 +21,7 @@ Route::post('oauth/access_token', function()
     return AuthorizationServer::performAccessTokenFlow();
 });
 
-Route::get('secure-route', array('before' => 'oauth', function(){
+Route::get('secure-route', array('before' => 'oauth:webapp', function(){
 	$ownerId = ResourceServer::getOwnerId();
 	echo Sentry::findUserById($ownerId)->email;
     return "oauth secured route";
