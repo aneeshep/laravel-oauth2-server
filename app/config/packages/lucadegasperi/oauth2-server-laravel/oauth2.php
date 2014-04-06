@@ -130,7 +130,24 @@ return array(
     /*
     |--------------------------------------------------------------------------
     | Default Scope
-    |--------------------------------------------------------------------------
+    |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    --------------------------------------------------------------------------
     |
     | The default scope to use if not present in the query string
     |
@@ -190,5 +207,5 @@ return array(
     | By default it checks both the query string and the http headers
     |
     */
-    'http_headers_only' => false,
+    'http_headers_only' => true,
 );
