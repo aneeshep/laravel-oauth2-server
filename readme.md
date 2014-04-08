@@ -18,19 +18,19 @@ Descpription to be done
 ### Get access token
 
 #### Request for token
-
-<pre> POST 10.10.10.100:8000/oauth/access_token?
-      grant_type=password&
-      client_id=saqnelrfjqtplzwr&
-      client_secret=efwsrljppdkawrnef&
-      username=admin&
-      password=password&
-      scope=webapp
-</pre>
-
+```
+    POST /oauth/access_token HTTP/1.1
+    Host: schoolmanagement.local
+    Authorization: VGlTEFhfaWK41PG9OYxKbZqcgkzv2IETpnS4nhjJ
+    Cache-Control: no-cache
+    Content-Type: application/x-www-form-urlencoded
+    grant_type=password&client_id=saqnelrfjqtplzwr&
+    client_secret=efwsrljppdkawrnef&username=admin&
+    password=password&scope=webapp
+```
 #### Sample Output
 
-<pre>
+```    
     {
         access_token: "EDNIIACytthbaLOojrTNobks4aRe9YgjSrqIS3SG"
         token_type: "bearer"
@@ -38,11 +38,15 @@ Descpription to be done
         expires_in: 604800
         refresh_token: "GJxMkIve9LOIA3oIyGlmI5xNvkYFYxQfuFd6cvW0"
     }
-</pre>
-
+```
 ### Use the token
 
 #### Request
 
-<pre> GET 10.10.10.100:8000/secure-route?access_token=VGlTEFhfaWK41PG9OYxKbZqcgkzv2IETpnS4nhjJ
-</pre>
+```
+    GET /secure-route HTTP/1.1
+    Host: schoolmanagement.local
+    Authorization: OFUqQFikjVr6e7EvsogU994qexGDk3HTwrVnv4mW
+    Cache-Control: no-cache
+       
+```
