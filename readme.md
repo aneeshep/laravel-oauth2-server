@@ -4,20 +4,22 @@ Descpription to be done
 
 ## Installation
 
-1. git clone https://aneeshep@bitbucket.org/aneeshep/school_management.git
-2. cd school_management
-3. composer install
-4. Setup the db details in conf/db.php
-5. php artisan migrate --package=cartalyst/sentry
-6. php artisan migrate --package="lucadegasperi/oauth2-server-laravel"
-7. php artisan migrate
-8. php artisan db:seed
+1. `git clone https://aneeshep@bitbucket.org/aneeshep/school_management.git`
+2. `cd school_management`
+3. `composer install`
+4. `Setup the db details in conf/db.php`
+5. `php artisan migrate --package=cartalyst/sentry`
+6. `php artisan migrate --package="lucadegasperi/oauth2-server-laravel"`
+7. `php artisan migrate`
+8. `php artisan db:seed`
 
 ## Usage
 
 ### Get access token
 
 #### Request for token
+
+
 ```
     POST /oauth/access_token HTTP/1.1
     Host: schoolmanagement.local
@@ -50,3 +52,16 @@ Descpription to be done
     Cache-Control: no-cache
        
 ```
+
+### Secure the API end points
+
+Filters are used to secure the API end points. `oauth` filrer is used to check the validity of access token and also the scope. 
+`access` filter is used to check the user permission.
+
+```
+    Route::get('test', array('before' => array('oauth:webapp', 'access:user.delete,user.create'), function()
+    {
+        return 'Access token and Scope are valid and You have the permission to create and delete the user!';
+    }));
+```
+
