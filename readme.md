@@ -23,7 +23,6 @@ Descpription to be done
 ```
     POST /oauth/access_token HTTP/1.1
     Host: schoolmanagement.local
-    Authorization: VGlTEFhfaWK41PG9OYxKbZqcgkzv2IETpnS4nhjJ
     Cache-Control: no-cache
     Content-Type: application/x-www-form-urlencoded
     grant_type=password&client_id=saqnelrfjqtplzwr&
