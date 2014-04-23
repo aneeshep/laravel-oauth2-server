@@ -1,13 +1,13 @@
-## School Management
+## Laravel4 Oauth2 Server
 
-Descpription to be done
+Laravel4 Oauth2 Server with [Sentry](https://cartalyst.com/manual/sentry) Support
 
 ## Installation
 
-1. `git clone https://aneeshep@bitbucket.org/aneeshep/school_management.git`
-2. `cd school_management`
+1. `git clone https://github.com/aneeshep/laravel-oauth2-server.git`
+2. `cd laravel-oauth2-server`
 3. `composer install`
-4. `Setup the db details in conf/db.php`
+4. `Setup the db details in app/config/database.php`
 5. `php artisan migrate --package=cartalyst/sentry`
 6. `php artisan migrate --package="lucadegasperi/oauth2-server-laravel"`
 7. `php artisan migrate`
@@ -22,7 +22,7 @@ Descpription to be done
 
 ```
     POST /oauth/access_token HTTP/1.1
-    Host: schoolmanagement.local
+    Host: oauthserver.local
     Cache-Control: no-cache
     Content-Type: application/x-www-form-urlencoded
     grant_type=password&client_id=saqnelrfjqtplzwr&
@@ -46,7 +46,7 @@ Descpription to be done
 
 ```
     GET /secure-route HTTP/1.1
-    Host: schoolmanagement.local
+    Host: oauthserver.local
     Authorization: OFUqQFikjVr6e7EvsogU994qexGDk3HTwrVnv4mW
     Cache-Control: no-cache
        
